@@ -12,9 +12,12 @@ export class TaskItemComponent {
   faTimes = faTimes;
 
   @Output() onDeleteTask: EventEmitter<Task> = new EventEmitter()
-
+  @Output() onToggleReminder: EventEmitter<Task> = new EventEmitter()
   onDelete(task: Task){
    this.onDeleteTask.emit(task)
+  }
+  onToggle(task: Task){
+    this.onToggleReminder.emit(task)
   }
 }
 // Use the ! operator to tell TypeScript that the task property will definitely be assigned later:
